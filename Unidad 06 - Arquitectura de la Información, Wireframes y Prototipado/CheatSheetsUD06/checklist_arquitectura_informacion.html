@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>✅ Checklist – Arquitectura de la Información</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 40px auto;
+      background: #fff;
+      color: #333;
+      max-width: 1000px;
+      line-height: 1.6;
+    }
+    h1 {
+      color: #005b99;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 40px;
+    }
+    th, td {
+      border: 1px solid #bbb;
+      padding: 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: #eaf4ff;
+    }
+    td.marcar {
+      text-align: center;
+      width: 80px;
+      font-weight: bold;
+    }
+    .categoria {
+      background: #f0f0f0;
+      font-weight: bold;
+      text-align: center;
+      font-size: 1.1em;
+    }
+    .nota {
+      background-color: #ffe;
+      border-left: 5px solid #e6c200;
+      padding: 10px;
+      margin-bottom: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>✅ Checklist – Arquitectura de la Información</h1>
+  <p>Marca ✔️ si se cumple claramente el criterio o ❌ si no se aplica o necesita revisión.</p>
+
+  <table>
+    <tr><th>Aspecto a evaluar</th><th>Explicación</th><th class="marcar">✔️ / ❌</th></tr>
+
+    <tr><td class="categoria" colspan="3">📂 Organización del contenido</td></tr>
+    <tr>
+      <td>Estructura clara y lógica</td>
+      <td>La información está agrupada jerárquicamente o según criterios funcionales comprensibles para el usuario.</td>
+      <td class="marcar"></td>
+    </tr>
+    <tr>
+      <td>Categorías bien definidas</td>
+      <td>Los contenidos no se repiten ni solapan. Cada categoría tiene un propósito claro.</td>
+      <td class="marcar"></td>
+    </tr>
+    <tr>
+      <td>Contenido accesible en pocos clics</td>
+      <td>La mayoría del contenido importante se accede en 3 clics o menos desde la página principal.</td>
+      <td class="marcar"></td>
+    </tr>
+
+    <tr><td class="categoria" colspan="3">🏷️ Etiquetado</td></tr>
+    <tr>
+      <td>Nombre de secciones claro</td>
+      <td>Los títulos de menús y páginas son comprensibles y describen exactamente su contenido.</td>
+      <td class="marcar"></td>
+    </tr>
+    <tr>
+      <td>Consistencia en los nombres</td>
+      <td>El mismo tipo de contenido siempre se nombra de la misma manera en todo el sitio.</td>
+      <td class="marcar"></td>
+    </tr>
+    <tr>
+      <td>Evita términos ambiguos</td>
+      <td>No se usan etiquetas vagas como “Otros” o “Varios” sin aclaración adicional.</td>
+      <td class="marcar"></td>
+    </tr>
+
+    <tr><td class="categoria" colspan="3">🧭 Navegación</td></tr>
+    <tr>
+      <td>Menú principal lógico</td>
+      <td>Las secciones del menú están organizadas según prioridad y flujo del usuario, no del negocio.</td>
+      <td class="marcar"></td>
+    </tr>
+    <tr>
+      <td>Migas de pan o rastro de navegación</td>
+      <td>El usuario puede saber en todo momento dónde está y cómo volver.</td>
+      <td class="marcar"></td>
+    </tr>
+    <tr>
+      <td>Navegación entre secciones relacionada</td>
+      <td>Se ofrecen enlaces o sugerencias a contenidos relacionados dentro del flujo de navegación.</td>
+      <td class="marcar"></td>
+    </tr>
+
+    <tr><td class="categoria" colspan="3">🔍 Búsqueda y recuperación</td></tr>
+    <tr>
+      <td>Buscador disponible</td>
+      <td>El sitio o app incluye un sistema de búsqueda accesible desde cualquier pantalla principal.</td>
+      <td class="marcar"></td>
+    </tr>
+    <tr>
+      <td>Resultados relevantes</td>
+      <td>El sistema devuelve resultados útiles y priorizados correctamente.</td>
+      <td class="marcar"></td>
+    </tr>
+    <tr>
+      <td>Filtros o categorías adicionales</td>
+      <td>Se permite refinar la búsqueda mediante filtros, etiquetas u ordenaciones.</td>
+      <td class="marcar"></td>
+    </tr>
+
+    <tr><td class="categoria" colspan="3">🧠 Principios de experiencia</td></tr>
+    <tr>
+      <td>Contenido orientado al usuario</td>
+      <td>La arquitectura se basa en lo que busca el usuario, no en cómo piensa la organización.</td>
+      <td class="marcar"></td>
+    </tr>
+    <tr>
+      <td>Permite escanear fácilmente</td>
+      <td>Los usuarios pueden visualizar rápidamente títulos, jerarquías y ubicarse sin leer todo.</td>
+      <td class="marcar"></td>
+    </tr>
+    <tr>
+      <td>Escalable y mantenible</td>
+      <td>La estructura permite añadir nuevas secciones o productos sin desorganizar el sistema.</td>
+      <td class="marcar"></td>
+    </tr>
+  </table>
+
+  <div class="nota">
+    📝 <strong>Consejo:</strong> Si marcas más de 4 ❌, considera reorganizar la arquitectura. Prueba con usuarios reales o revisa con técnicas como card sorting o tests de árbol.
+  </div>
+
+</body>
+</html>
