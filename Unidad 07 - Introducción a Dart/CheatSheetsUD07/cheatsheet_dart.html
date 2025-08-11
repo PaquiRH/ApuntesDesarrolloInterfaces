@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Cheat Sheet – Dart</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      line-height: 1.6;
+      max-width: 900px;
+      margin: 40px auto;
+      background: #fff;
+      color: #333;
+    }
+    h1, h2, h3 {
+      color: #005b99;
+      margin-top: 1.5em;
+    }
+    .bloque {
+      margin: 1em 0;
+      padding: 1em;
+      border-left: 5px solid #0077cc;
+      background: #eef6fc;
+    }
+    .error {
+      border-left-color: #cc0000;
+      background: #ffecec;
+    }
+    .clave {
+      background: #fff8dc;
+      border-left-color: #e6c200;
+    }
+    ul {
+      margin-left: 1.5em;
+    }
+    code {
+      background: #f0f0f0;
+      padding: 2px 4px;
+      font-family: Consolas, monospace;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1em;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🚀 Cheat Sheet – Dart</h1>
+  <p>Guía rápida de sintaxis y características clave de Dart, incluyendo operadores estándar y especiales.</p>
+
+  <h2>📦 Variables y Tipos</h2>
+  <div class="bloque">
+    <ul>
+      <li><code>var nombre = "Ana";</code> – tipo inferido.</li>
+      <li><code>String apellido = "López";</code> – tipo explícito.</li>
+      <li><code>final edad = 25;</code> – solo lectura (en tiempo de ejecución).</li>
+      <li><code>const PI = 3.14;</code> – constante en tiempo de compilación.</li>
+      <li><code>dynamic x = 5;</code> – tipo dinámico, menos seguro.</li>
+      <li><code>late String titulo;</code> – inicialización diferida.</li>
+      <li><code>int</code> – números enteros</li>
+      <li><code>double</code> – números decimales</li>
+      <li><code>bool</code> – verdadero/falso</li>
+      <li><code>String</code> – texto</li>
+    </ul>
+  </div>
+
+  <h2>🔢 Operadores</h2>
+  
+  <h3>Aritméticos</h3>
+  <div class="bloque">
+    <ul>
+      <li><code>+</code> – Suma</li>
+      <li><code>-</code> – Resta</li>
+      <li><code>*</code> – Multiplicación</li>
+      <li><code>/</code> – División (resultado double)</li>
+      <li><code>~/</code> – División entera</li>
+      <li><code>%</code> – Módulo (resto)</li>
+      <li><code>-expr</code> – Negación</li>
+      <li><code>++var</code>, <code>var++</code> – Incremento</li>
+      <li><code>--var</code>, <code>var--</code> – Decremento</li>
+    </ul>
+  </div>
+
+  <h3>Comparación</h3>
+  <div class="bloque">
+    <ul>
+      <li><code>==</code> – Igualdad</li>
+      <li><code>!=</code> – Desigualdad</li>
+      <li><code>></code> – Mayor que</li>
+      <li><code><</code> – Menor que</li>
+      <li><code>>=</code> – Mayor o igual</li>
+      <li><code><=</code> – Menor o igual</li>
+    </ul>
+  </div>
+
+  <h3>Lógicos</h3>
+  <div class="bloque">
+    <ul>
+      <li><code>!expr</code> – Negación</li>
+      <li><code>&&</code> – AND</li>
+      <li><code>||</code> – OR</li>
+    </ul>
+  </div>
+
+  <h3>Asignación</h3>
+  <div class="bloque">
+    <ul>
+      <li><code>=</code> – Asignación básica</li>
+      <li><code>+=</code>, <code>-=</code>, <code>*=</code>, <code>/=</code>, etc.</li>
+      <li><code>??=</code> – Asigna solo si es null</li>
+    </ul>
+  </div>
+
+  <h3>Operadores Únicos de Dart</h3>
+  <div class="bloque">
+    <ul>
+      <li><strong>Null-aware access</strong> – <code>?.</code><br>
+        <code>usuario?.nombre</code> – Acceso seguro a nulos</li>
+
+      <li><strong>Null-coalescing</strong> – <code>??</code><br>
+        <code>print(nombre ?? "Desconocido");</code> – Valor por defecto</li>
+
+      <li><strong>Null assertion</strong> – <code>!</code><br>
+        <code>usuario!.nombre</code> – Asegura que no es null</li>
+
+      <li><strong>Cascade notation</strong> – <code>..</code><br>
+        <code>persona..nombre = "Ana"..saludar();</code></li>
+
+      <li><strong>Conditional cascade</strong> – <code>?..</code><br>
+        <code>usuario?..actualizarPerfil();</code></li>
+
+      <li><strong>Spread operator</strong> – <code>...</code><br>
+        <code>var lista2 = [0, ...lista1];</code></li>
+
+      <li><strong>Null-aware spread</strong> – <code>...?</code><br>
+        <code>var lista = [1, ...?otraLista];</code></li>
+    </ul>
+  </div>
+
+  <h2>🔁 Control de Flujo</h2>
+  <div class="grid">
+    <div class="bloque">
+      <h3>Condicionales</h3>
+      <ul>
+        <li><code>if (cond) { ... } else if { ... } else { ... }</code></li>
+        <li><code>switch (valor) { case 1: ...; break; default: ... }</code></li>
+        <li><code>cond ? expr1 : expr2</code> – Operador ternario</li>
+      </ul>
+    </div>
+
+    <div class="bloque">
+      <h3>Bucles</h3>
+      <ul>
+        <li><code>for (var i = 0; i < 5; i++) { ... }</code></li>
+        <li><code>for (var item in lista) { ... }</code></li>
+        <li><code>while (cond) { ... }</code></li>
+        <li><code>do { ... } while (cond);</code></li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>📌 Funciones</h2>
+  <div class="bloque">
+    <ul>
+      <li>Definición: <code>String saludar(String nombre) { return "Hola $nombre"; }</code></li>
+      <li>Flecha: <code>void imprimir() => print("Hola");</code></li>
+      <li>Parámetros opcionales posicionales: <code>void saludar([String? nombre])</code></li>
+      <li>Parámetros nombrados: <code>void saludar({required String nombre})</code></li>
+      <li>Valores por defecto: <code>void saludar({String nombre = "Anónimo"})</code></li>
+      <li>Funciones anónimas: <code>var f = (x) => x * 2;</code></li>
+      <li>Closures: <code>Function() contador() { int i=0; return () => i++; }</code></li>
+    </ul>
+  </div>
+
+  <h2>📚 Colecciones</h2>
+  <div class="bloque">
+    <ul>
+      <li>Listas: <code>var lista = [1, 2, 3];</code></li>
+      <li>Sets: <code>var conjunto = {1, 2, 3};</code></li>
+      <li>Mapas: <code>var mapa = {'a': 1, 'b': 2};</code></li>
+      <li>Métodos útiles: <code>map()</code>, <code>where()</code>, <code>fold()</code>, <code>reduce()</code></li>
+      <li>Collection if: <code>var l = [1, if (cond) 2];</code></li>
+      <li>Collection for: <code>var l = [for (var i in [1,2]) i*2];</code></li>
+    </ul>
+  </div>
+
+  <h2>🏗️ Programación Orientada a Objetos</h2>
+  <div class="bloque">
+    <ul>
+      <li>Clases básicas: <code>class Persona { String nombre; Persona(this.nombre); }</code></li>
+      <li>Constructores con nombre: <code>Punto.origin() : x=0, y=0;</code></li>
+      <li>Factory constructors: <code>factory Conexion() => _instancia;</code></li>
+      <li>Getters/Setters: <code>double get area => ancho * alto;</code></li>
+      <li>Herencia: <code>class Perro extends Animal</code></li>
+      <li>Mixins: <code>class Pajaro with Volador</code></li>
+      <li>Interfaces: <code>class Documento implements Imprimible</code></li>
+      <li>Clases abstractas: <code>abstract class Figura { double area(); }</code></li>
+    </ul>
+  </div>
+
+  <h2>⏳ Asincronía</h2>
+  <div class="bloque">
+    <ul>
+      <li>Futures: <code>Future<String> obtenerDatos() async { ... }</code></li>
+      <li>Async/await: <code>var datos = await obtenerDatos();</code></li>
+      <li>Streams: <code>await for (var item in stream) { ... }</code></li>
+      <li>Isolates: <code>Isolate.spawn(tareaPesada, sendPort);</code></li>
+    </ul>
+  </div>
+
+  <h2>🛠️ Herramientas CLI</h2>
+  <div class="bloque">
+    <ul>
+      <li>Crear proyecto: <code>dart create nombre_proyecto</code></li>
+      <li>Ejecutar: <code>dart run</code></li>
+      <li>Compilar: <code>dart compile exe archivo.dart</code></li>
+      <li>Instalar dependencias: <code>dart pub get</code></li>
+      <li>Analizar código: <code>dart analyze</code></li>
+      <li>Formatear: <code>dart format .</code></li>
+      <li>Generar documentación: <code>dart doc</code></li>
+      <li>Ejecutar tests: <code>dart test</code></li>
+    </ul>
+  </div>
+
+  <h2>🧪 Testing</h2>
+  <div class="bloque">
+    <ul>
+      <li>Pruebas unitarias: <code>test('suma', () { expect(1+1, 2); });</code></li>
+      <li>Pruebas async: <code>test('async', () async { await ... });</code></li>
+      <li>Pruebas Streams: <code>expect(stream, emitsInOrder([1,2,3]));</code></li>
+      <li>Setup/teardown: <code>setUp(() { ... }); tearDown(() { ... });</code></li>
+    </ul>
+  </div>
+
+  <h2>📝 Documentación</h2>
+  <div class="bloque">
+    <ul>
+      <li>Comentarios doc: <code>/// Calcula el área</code></li>
+      <li>Generar docs: <code>dart doc</code></li>
+      <li>Ejemplo en docs: <pre>/// Ejemplo:
+/// ```dart
+/// var r = Rectangulo(3,4);
+/// ```</pre></li>
+    </ul>
+  </div>
+
+  <div class="clave">
+    ✅ <strong>Consejo:</strong> Combina operadores estándar con los únicos de Dart (<code>..</code>, <code>??</code>, etc.) para código más expresivo y seguro contra nulls.
+  </div>
+
+</body>
+</html>
