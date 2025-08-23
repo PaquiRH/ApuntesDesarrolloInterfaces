@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Cheat Sheet – Flutter Instalación y Comandos</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      line-height: 1.6;
+      max-width: 960px;
+      margin: 40px auto;
+      background: #fff;
+      color: #333;
+    }
+    h1, h2, h3 {
+      color: #005b99;
+      margin-top: 1.5em;
+    }
+    .bloque {
+      margin: 1em 0;
+      padding: 1em;
+      border-left: 5px solid #0077cc;
+      background: #eef6fc;
+    }
+    .clave {
+      background: #fff8dc;
+      border-left: 5px solid #e6c200;
+      padding: 1em;
+      margin-top: 1em;
+    }
+    pre {
+      background: #f8f8f8;
+      padding: 10px;
+      overflow-x: auto;
+      border-radius: 4px;
+    }
+    code {
+      font-family: Consolas, monospace;
+    }
+  </style>
+</head>
+<body>
+
+<h1>🚀 Flutter Cheat Sheet – Instalación y Comandos</h1>
+<p>Referencia rápida con los pasos, estructura inicial de proyectos y comandos más útiles de Flutter. Esta guía está pensada para ayudarte a arrancar proyectos de forma práctica y sin perder tiempo.</p>
+
+<h2>🏗 Estructura básica de una app Flutter</h2>
+<div class="bloque">
+<pre><code>import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp()); // Punto de entrada de la app
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Mi primera app Flutter',
+      home: HomePage(),
+    );
+  }
+}
+
+class HomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Inicio')),
+      body: Center(child: Text('¡Hola Mundo!')),
+    );
+  }
+}
+</code></pre>
+<p><strong>Analogía:</strong> 
+<ul>
+<li><code>main.dart</code> → la puerta de entrada de la casa.</li>
+<li><code>MaterialApp</code> → el interiorista que define el estilo, rutas y colores.</li>
+<li><code>Scaffold</code> → el andamio: paredes, techo y estructura de cada pantalla.</li>
+<li>Widgets (<code>Text</code>, <code>Button</code>, etc.) → los muebles que llenan la casa.</li>
+<li>Estructura tipo muñecas rusas: cada widget contiene a otro hasta llegar al más pequeño.</li>
+</ul>
+</p>
+</div>
+
+<h2>⌨️ Comandos principales de Flutter</h2>
+<div class="bloque">
+<pre><code>// Crear un nuevo proyecto
+flutter create mi_app
+
+// Ejecutar la app
+flutter run
+flutter run -d chrome       # navegador Chrome
+flutter run -d ios          # simulador iOS
+flutter run -d emulator-5554 # emulador Android específico
+
+// Generar binarios para distribución
+flutter build apk           # APK Android
+flutter build appbundle     # AAB Play Store
+flutter build ios           # IPA App Store
+flutter build web           # versión web
+flutter build windows       # ejecutable Windows
+flutter build linux         # ejecutable Linux
+flutter build macos         # ejecutable macOS
+
+// Gestión de dependencias
+flutter pub get             # descarga las librerías del pubspec.yaml
+flutter pub add http        # añade http al pubspec.yaml automáticamente
+flutter pub add provider    # añade provider
+
+// Ejecutar tests unitarios
+flutter test
+</code></pre>
+<p><strong>Atajo:</strong> Durante <code>flutter run</code>, puedes usar:
+<ul>
+<li><code>r</code> → Hot Reload</li>
+<li><code>R</code> → Hot Restart</li>
+</ul>
+</p>
+</div>
+
+<h2>📦 Gestión de Paquetes (pub.dev)</h2>
+<div class="bloque">
+<pre><code># pubspec.yaml
+name: mi_app
+description: Mi primera aplicación en Flutter
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  http: ^0.13.6
+  provider: ^6.1.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+// Instalar dependencias tras editar el archivo
+flutter pub get
+</code></pre>
+<p><strong>Nota:</strong> Todos los paquetes oficiales y de terceros están disponibles en <a href="https://pub.dev" target="_blank">pub.dev</a>.  
+Ejemplo: <code>http</code> para peticiones REST, <code>provider</code> para gestión de estado.</p>
+</div>
+
+<h2>⚡ Hot Reload vs Hot Restart</h2>
+<div class="bloque">
+<pre><code>// Hot Reload (r)
+✔ Recarga solo los cambios realizados en el código.
+✔ Mantiene el estado actual de la aplicación.
+✔ Ideal para ajustes visuales como estilos, colores o textos.
+
+// Hot Restart (R)
+✔ Reinicia completamente la aplicación.
+✔ Pierde el estado (reinicia variables y controladores).
+✔ Útil cuando modificas inicializaciones globales.
+</code></pre>
+</div>
+
+<h2>🛠 Dart DevTools</h2>
+<div class="bloque">
+<pre><code>// Instalar y activar DevTools
+flutter pub global activate devtools
+
+// Ejecutar la app con puerto de observación
+flutter run --observatory-port=9200
+
+// Abrir DevTools en el navegador
+devtools
+</code></pre>
+<p><strong>Incluye:</strong> Inspector de widgets en vivo, análisis de performance, monitoreo de memoria y consola de logs.</p>
+</div>
+
+<h2>🧩 Extensiones recomendadas</h2>
+<div class="bloque">
+<pre><code>// Visual Studio Code
+✔ Flutter (autocompletado, snippets, debugging)
+✔ Dart (soporte de lenguaje)
+✔ Flutter Widget Snippets (atajos de widgets comunes)
+✔ Pubspec Assist (gestión rápida de dependencias)
+
+// Android Studio
+✔ Flutter plugin (emuladores + debugging)
+✔ Dart plugin (soporte de lenguaje)
+✔ Flutter Enhancement Suite (productividad extra)
+</code></pre>
+</div>
+
+<h2>🚀 Despliegue en distintas plataformas</h2>
+<div class="bloque">
+<pre><code>// Android
+flutter build apk
+flutter build appbundle
+
+// iOS
+flutter build ipa
+
+// Web
+flutter build web --web-renderer canvaskit
+
+// Escritorio
+flutter build windows
+flutter build macos
+flutter build linux
+</code></pre>
+<p><strong>Consejo:</strong> Para publicar en Play Store o App Store, debes configurar firma y cuentas de desarrollador. En escritorio puedes distribuir directamente los ejecutables.</p>
+</div>
+
+<div class="clave">
+✅ Consejo final: Tras instalar Flutter, ejecuta siempre <code>flutter doctor</code> para verificar tu entorno.  
+Recuerda que <code>flutter pub add &lt;paquete&gt;</code> es la forma más rápida y segura de integrar nuevas librerías en tu proyecto.
+</div>
+
+</body>
+</html>
